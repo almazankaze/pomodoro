@@ -1,23 +1,25 @@
-import React, { useContext, useReducer} from "react";
+import React, { useContext, useReducer } from "react";
 import reducer from "./reducer";
 
-const AppContext = React.createContext()
+const AppContext = React.createContext();
 
 const initialState = {
-    isActive: false,
-    minutes: 20,
-    seconds: 0,
+  isActive: false,
+  minutes: 20,
+  seconds: 0,
 };
 
-const AppProvider = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+const AppProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    const toggleTimerButton = () => {
-        dispatch({type: "TOGGLE_TIMER_BUTTON", payload: state.isActive})
-    }
+  const toggleTimerButton = () => {
+    dispatch({ type: "TOGGLE_TIMER_BUTTON", payload: state.isActive });
+  };
 
-    return (
-    <AppContext.Provider value={{ ...state, toggleTimerButton }}>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={{ ...state, toggleTimerButton }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
