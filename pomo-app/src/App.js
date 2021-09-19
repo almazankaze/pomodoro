@@ -11,7 +11,6 @@ function App() {
       <CircleProgressBar
         trailStrokeColor="gray"
         strokeColor="teal"
-        percentage={75}
         innerText="complete"
       />
     </div>

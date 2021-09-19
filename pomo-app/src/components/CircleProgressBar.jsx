@@ -1,12 +1,8 @@
 import React from "react";
 import "./styles/CircleProgressBar.css";
+import { useGlobalContext } from "../context";
 
-const CircleProgressBar = ({
-  trailStrokeColor,
-  strokeColor,
-  percentage,
-  innerText,
-}) => {
+const CircleProgressBar = ({ trailStrokeColor, strokeColor, innerText }) => {
   const INITIAL_OFFSET = 25;
   const circleConfig = {
     viewBox: "0 0 100 40",
@@ -14,6 +10,8 @@ const CircleProgressBar = ({
     y: "20",
     radio: "15.91549430918954",
   };
+
+  const { getTimePercentage } = useGlobalContext();
 
   return (
     <svg viewBox={circleConfig.viewBox}>
@@ -33,12 +31,12 @@ const CircleProgressBar = ({
         r={circleConfig.radio}
         fill="transparent"
         stroke={strokeColor}
-        strokeDasharray={`${percentage} ${100 - percentage}`}
+        strokeDasharray={`${getTimePercentage()} ${100 - getTimePercentage()}`}
         strokeDashoffset={INITIAL_OFFSET}
       />
       <g className="circle-label">
         <text x="50%" y="50%" className="circle-percentage">
-          {percentage}%
+          {getTimePercentage()}%
         </text>
         <text x="50%" y="50%" className="circle-text">
           {innerText}
