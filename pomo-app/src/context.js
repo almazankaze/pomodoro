@@ -4,9 +4,9 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const myState = {
-  defaultMin: 0,
-  defaultSec: 40,
-  defaultTotalSec: 40,
+  defaultMin: 20,
+  defaultSec: 0,
+  defaultTotalSec: 1200,
 };
 
 const AppProvider = ({ children }) => {
@@ -25,6 +25,8 @@ const AppProvider = ({ children }) => {
   const toggleTimerButton = () => {
     if (totalSeconds <= 0) {
       // reset timer
+      setMinutes(state.defaultMin);
+      setTotalSeconds(state.defaultTotalSec);
     }
 
     setIsActive(!isActive);
@@ -50,7 +52,13 @@ const AppProvider = ({ children }) => {
     }
 
     return () => clearInterval(interval);
-  }, [isActive, seconds, totalSeconds]);
+  }, [isActive, seconds]);
+
+  useEffect(() => {
+    if (totalSeconds === 0) {
+      setIsActive(false);
+    }
+  }, [totalSeconds]);
 
   return (
     <AppContext.Provider
