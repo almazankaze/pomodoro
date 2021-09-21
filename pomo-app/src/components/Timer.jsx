@@ -13,7 +13,9 @@ const Timer = () => {
   }
 
   return (
-    <div className="timer">{addZero(minutes) + ":" + addZero(seconds)}</div>
+    <text x="50%" y="50%" className="timer">
+      {addZero(minutes) + ":" + addZero(seconds)}
+    </text>
   );
 };
 

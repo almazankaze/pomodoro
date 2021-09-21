@@ -1,22 +1,20 @@
 import "./App.css";
 import CircleProgressBar from "./components/CircleProgressBar";
-import Timer from "./components/Timer";
-import TimerButton from "./components/TimerButton";
 import IconButton from "@mui/material/IconButton";
 import SettingsIcon from "@mui/icons-material/Settings";
+import TimerTypeToggler from "./components/TimerTypeToggler";
 
 function App() {
   return (
     <div className="App">
-      <Timer />
-      <TimerButton />
+      <h1 className="heading">pomodoro</h1>
+      <TimerTypeToggler />
       <CircleProgressBar
-        trailStrokeColor="gray"
-        strokeColor="teal"
-        innerText="complete"
+        trailStrokeColor="hsl(224, 36%, 15%)"
+        strokeColor="hsl(6, 63%, 50%)"
       />
       <IconButton aria-label="settings">
-        <SettingsIcon />
+        <SettingsIcon style={{ fontSize: "2rem", color: "gray" }} />
       </IconButton>
     </div>
   );

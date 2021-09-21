@@ -1,12 +1,14 @@
 import React from "react";
+import Timer from "./Timer";
 import "./styles/CircleProgressBar.css";
 import { useGlobalContext } from "../context";
+import TimerButton from "./TimerButton";
 
-const CircleProgressBar = ({ trailStrokeColor, strokeColor, innerText }) => {
+const CircleProgressBar = ({ trailStrokeColor, strokeColor }) => {
   const INITIAL_OFFSET = 25;
   const circleConfig = {
-    viewBox: "0 0 100 40",
-    x: "50",
+    viewBox: "0 0 120 40",
+    x: "60",
     y: "20",
     radio: "15.91549430918954",
   };
@@ -14,13 +16,13 @@ const CircleProgressBar = ({ trailStrokeColor, strokeColor, innerText }) => {
   const { getTimePercentage } = useGlobalContext();
 
   return (
-    <svg viewBox={circleConfig.viewBox}>
+    <svg viewBox={circleConfig.viewBox} preserveAspectRatio="xMinYMin meet">
       <circle
         className="ring"
         cx={circleConfig.x}
         cy={circleConfig.y}
         r={circleConfig.radio}
-        fill="transparent"
+        fill="hsl(224, 36%, 15%)"
         stroke={trailStrokeColor}
       />
 
@@ -29,18 +31,14 @@ const CircleProgressBar = ({ trailStrokeColor, strokeColor, innerText }) => {
         cx={circleConfig.x}
         cy={circleConfig.y}
         r={circleConfig.radio}
-        fill="transparent"
+        fill="hsl(224, 36%, 15%)"
         stroke={strokeColor}
         strokeDasharray={`${getTimePercentage()} ${100 - getTimePercentage()}`}
         strokeDashoffset={INITIAL_OFFSET}
       />
-      <g className="circle-label">
-        <text x="50%" y="50%" className="circle-percentage">
-          {getTimePercentage()}%
-        </text>
-        <text x="50%" y="50%" className="circle-text">
-          {innerText}
-        </text>
+      <g fill="white" className="circle-label">
+        <Timer />
+        <TimerButton />
       </g>
     </svg>
   );

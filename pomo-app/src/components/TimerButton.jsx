@@ -5,7 +5,9 @@ const TimerButton = () => {
   const { isActive, toggleTimerButton } = useGlobalContext();
 
   return (
-    <button onClick={toggleTimerButton}>{isActive ? "Pause" : "Start"}</button>
+    <text x="50%" y="50%" className="timer-button" onClick={toggleTimerButton}>
+      {isActive ? "Pause" : "Start"}
+    </text>
   );
 };
 

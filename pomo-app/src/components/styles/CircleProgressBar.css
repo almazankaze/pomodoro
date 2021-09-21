@@ -2,16 +2,18 @@
   transform: translateY(0.25em);
 }
 
-.circle-percentage {
+.timer {
   font-size: 0.6em;
   line-height: 1;
   text-anchor: middle;
   transform: translateY(-0.25em);
+  font-weight: 600;
 }
 
-.circle-text {
+.timer-button {
   font-size: 0.2em;
   text-transform: uppercase;
   text-anchor: middle;
   transform: translateY(0.7em);
+  cursor: pointer;
 }

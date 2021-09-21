@@ -66,6 +66,7 @@ const AppProvider = ({ children }) => {
         ...state,
         getTimePercentage,
         toggleTimerButton,
+        isActive,
         minutes,
         seconds,
       }}
