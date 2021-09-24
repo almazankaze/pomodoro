@@ -4,16 +4,36 @@
   color: #fff;
   border: none;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: bold;
-  min-width: 150px;
+  min-width: 5.625rem;
   border-radius: 1.5rem;
   cursor: pointer;
 }
 
 .active {
-  background-color: hsl(6, 63%, 50%);
+  background-color: orange;
   color: black;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
+  .btn {
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    min-width: 9.375rem;
+    border-radius: 1.5rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 68.75rem) {
+  .btn {
+    padding: 1rem 0;
+    font-size: 1.25rem;
+    min-width: 9.375rem;
+    border-radius: 1.5rem;
+  }
 }

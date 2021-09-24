@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/TimerTypeButton.css";
+import { useGlobalContext } from "../context";
 
-const TimerTypeButton = ({ myText }) => {
-  const [isActive, setIsActive] = useState(false);
+const TimerTypeButton = ({ id, myText }) => {
+  const { currentTimer, changeTimer } = useGlobalContext();
 
   return (
     <button
-      className={`btn ${isActive ? "active" : ""}`}
-      onClick={() => setIsActive(!isActive)}
+      className={`btn ${id === currentTimer ? "active" : ""}`}
+      onClick={() => changeTimer(id)}
     >
       {myText}
     </button>
