@@ -1,0 +1,48 @@
+.timers-section {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin: 1.25rem;
+}
+
+.change-timers-group {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer-input > input {
+  width: 5rem;
+  padding: 0.375rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.timer-text {
+  font-size: 0.5rem;
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
+  .timer-input > input {
+    width: 7.5rem;
+  }
+
+  .timer-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 68.75rem) {
+  .timer-input > input {
+    width: 7.5rem;
+  }
+
+  .timer-text {
+    font-size: 0.75rem;
+  }
+}

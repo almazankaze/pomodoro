@@ -17,6 +17,7 @@ const AppProvider = ({ children }) => {
   const [seconds, setSeconds] = useState(state.defaultSec);
   const [totalSeconds, setTotalSeconds] = useState(state.defaultTotalSec);
   const [currentTimer, setCurrentTimer] = useState(0);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const getTimePercentage = () => {
     return (totalSeconds / state.defaultTotalSec) * 100;
@@ -32,9 +33,16 @@ const AppProvider = ({ children }) => {
     setIsActive(!isActive);
   };
 
-  // reducer functions
   const changeTimer = (timer) => {
     setCurrentTimer(timer);
+  };
+
+  const openSettings = () => {
+    setIsSettingsOpen(true);
+  };
+
+  const closeSettings = () => {
+    setIsSettingsOpen(false);
   };
 
   useEffect(() => {
@@ -72,10 +80,13 @@ const AppProvider = ({ children }) => {
         getTimePercentage,
         toggleTimerButton,
         changeTimer,
+        openSettings,
+        closeSettings,
         isActive,
         minutes,
         seconds,
         currentTimer,
+        isSettingsOpen,
       }}
     >
       {children}

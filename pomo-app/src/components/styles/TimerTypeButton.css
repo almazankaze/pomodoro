@@ -14,7 +14,7 @@
 }
 
 .active {
-  background-color: orange;
+  background-color: hsl(6, 63%, 50%);
   color: black;
 }
 

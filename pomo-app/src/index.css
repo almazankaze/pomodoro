@@ -9,3 +9,33 @@
 body {
   background-color: hsl(223, 31%, 20%);
 }
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 0.825rem;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 68.75rem) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
