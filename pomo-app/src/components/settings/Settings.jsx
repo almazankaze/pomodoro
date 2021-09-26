@@ -8,10 +8,22 @@ import ChangeTimers from "./ChangeTimers";
 import ChangeColor from "./ChangeColor";
 
 const Settings = () => {
-  const { isSettingsOpen, closeSettings, update, defaultColor, defaultFont } =
-    useGlobalContext();
+  const {
+    isSettingsOpen,
+    closeSettings,
+    update,
+    defaultMin,
+    defaultShortBreak,
+    defaultLongBreak,
+    defaultColor,
+    defaultFont,
+  } = useGlobalContext();
+
   const [fontType, setFontType] = useState(defaultFont);
   const [colorTheme, setColorTheme] = useState(defaultColor);
+  const [main, setMain] = useState(defaultMin);
+  const [shortBreak, setShortBreak] = useState(defaultShortBreak);
+  const [longBreak, setLongBreak] = useState(defaultLongBreak);
 
   const changeFont = (font) => {
     setFontType(font);
@@ -21,9 +33,24 @@ const Settings = () => {
     setColorTheme(color);
   };
 
+  const changeMain = (val) => {
+    setMain(val);
+  };
+
+  const changeShort = (val) => {
+    setShortBreak(val);
+  };
+
+  const changeLong = (val) => {
+    setLongBreak(val);
+  };
+
   const close = () => {
     setFontType(defaultFont);
     setColorTheme(defaultColor);
+    setMain(defaultMin);
+    setShortBreak(defaultShortBreak);
+    setLongBreak(defaultLongBreak);
     closeSettings();
   };
 
@@ -41,7 +68,15 @@ const Settings = () => {
           </IconButton>
         </div>
         <hr className="modal-divider"></hr>
-        <ChangeTimers text="Time (Minutes)" />
+        <ChangeTimers
+          text="Time (Minutes)"
+          main={main}
+          short={shortBreak}
+          long={longBreak}
+          changeMain={changeMain}
+          changeShort={changeShort}
+          changeLong={changeLong}
+        />
         <hr className="modal-divider"></hr>
         <ChangeFont
           text="Font"

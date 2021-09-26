@@ -1,8 +1,4 @@
-import { useGlobalContext } from "../context";
-
-const Timer = () => {
-  const { minutes, seconds } = useGlobalContext();
-
+const Timer = ({ minutes, seconds }) => {
   // adds a zero when number is a single digit
   function addZero(x) {
     if (x < 10) {

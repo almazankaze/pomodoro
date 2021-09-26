@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Timer from "./Timer";
+import TimerButton from "./TimerButton";
+import "./styles/PomodoroTimer.css";
 
-const PomodoroTimer = ({ min, totalSec }) => {
+const PomodoroTimer = ({
+  id,
+  currentTimer,
+  min,
+  trailStrokeColor,
+  strokeColor,
+}) => {
   const [isActive, setIsActive] = useState(false);
+  const [defaultMin, setDefaultMin] = useState(min);
   const [minutes, setMinutes] = useState(min);
   const [seconds, setSeconds] = useState(0);
-  const [totalSeconds, setTotalSeconds] = useState(totalSec);
+  const [defaultTotalSec, setDefaultTotalSec] = useState(min * 60);
+  const [totalSeconds, setTotalSeconds] = useState(min * 60);
+
+  const INITIAL_OFFSET = 25;
+  const circleConfig = {
+    viewBox: "0 0 120 40",
+    x: "60",
+    y: "20",
+    radio: "15.91549430918954",
+  };
 
   const getTimePercentage = () => {
-    return (totalSeconds / totalSeconds) * 100;
+    return (totalSeconds / defaultTotalSec) * 100;
+  };
+
+  const toggleTimerButton = () => {
+    if (totalSeconds <= 0) {
+      // reset timer
+      setMinutes(defaultMin);
+      setTotalSeconds(defaultTotalSec);
+    }
+
+    setIsActive(!isActive);
   };
 
   useEffect(() => {
@@ -38,7 +67,37 @@ const PomodoroTimer = ({ min, totalSec }) => {
     }
   }, [totalSeconds]);
 
-  return <div></div>;
+  return (
+    <svg
+      viewBox={circleConfig.viewBox}
+      preserveAspectRatio="xMinYMin meet"
+      className={currentTimer === id ? "visible" : "non-visible"}
+    >
+      <circle
+        className="ring"
+        cx={circleConfig.x}
+        cy={circleConfig.y}
+        r={circleConfig.radio}
+        fill="hsl(224, 36%, 15%)"
+        stroke={trailStrokeColor}
+      />
+
+      <circle
+        className="path"
+        cx={circleConfig.x}
+        cy={circleConfig.y}
+        r={circleConfig.radio}
+        fill="hsl(224, 36%, 15%)"
+        stroke={strokeColor}
+        strokeDasharray={`${getTimePercentage()} ${100 - getTimePercentage()}`}
+        strokeDashoffset={INITIAL_OFFSET}
+      />
+      <g fill="white" className="circle-label">
+        <Timer minutes={minutes} seconds={seconds} />
+        <TimerButton active={isActive} toggleTimerButton={toggleTimerButton} />
+      </g>
+    </svg>
+  );
 };
 
 export default PomodoroTimer;

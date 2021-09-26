@@ -23,6 +23,14 @@
   font-family: "Gluten", cursive, sans-serif;
 }
 
+.visible {
+  display: block;
+}
+
+.non-visible {
+  display: none;
+}
+
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
   .heading {

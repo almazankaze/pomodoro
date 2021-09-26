@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles/ChangeTimers.css";
 
-const ChangeTimers = ({ text }) => {
-  const [main, setMain] = useState(20);
-  const [shortBreak, setShortBreak] = useState(5);
-  const [longBreak, setLongBreak] = useState(15);
-
+const ChangeTimers = ({
+  text,
+  main,
+  short,
+  long,
+  changeMain,
+  changeShort,
+  changeLong,
+}) => {
   return (
     <div className="timers-section">
       <h3>{text}</h3>
@@ -16,23 +20,23 @@ const ChangeTimers = ({ text }) => {
           <input
             type="number"
             value={main}
-            onChange={(e) => setMain(e.target.value)}
+            onChange={(e) => changeMain(e.target.value)}
           ></input>
         </div>
         <div className="timer-input">
           <p className="timer-text">short break</p>
           <input
             type="number"
-            value={shortBreak}
-            onChange={(e) => setShortBreak(e.target.value)}
+            value={short}
+            onChange={(e) => changeShort(e.target.value)}
           ></input>
         </div>
         <div className="timer-input">
           <p className="timer-text">long break</p>
           <input
             type="number"
-            value={longBreak}
-            onChange={(e) => setLongBreak(e.target.value)}
+            value={long}
+            onChange={(e) => changeLong(e.target.value)}
           ></input>
         </div>
       </div>
