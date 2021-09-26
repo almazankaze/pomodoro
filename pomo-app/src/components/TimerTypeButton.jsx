@@ -3,11 +3,11 @@ import "./styles/TimerTypeButton.css";
 import { useGlobalContext } from "../context";
 
 const TimerTypeButton = ({ id, myText }) => {
-  const { currentTimer, changeTimer } = useGlobalContext();
+  const { currentTimer, changeTimer, defaultColor } = useGlobalContext();
 
   return (
     <button
-      className={`btn ${id === currentTimer ? "active" : ""}`}
+      className={`btn ${id === currentTimer ? defaultColor : ""}`}
       onClick={() => changeTimer(id)}
     >
       {myText}

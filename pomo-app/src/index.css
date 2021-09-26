@@ -18,6 +18,19 @@ h3 {
   font-size: 0.825rem;
 }
 
+.theme1-color {
+  background-color: hsl(6, 63%, 50%) !important;
+}
+
+.theme2-color {
+  background-color: hsl(176, 100%, 44%) !important;
+  color: black !important;
+}
+
+.theme3-color {
+  background-color: hsl(285, 91%, 52%) !important;
+}
+
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
   h2 {

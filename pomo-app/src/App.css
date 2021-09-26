@@ -11,6 +11,18 @@
   margin: 2rem 0;
 }
 
+.font1 {
+  font-family: sans-serif;
+}
+
+.font2 {
+  font-family: "Courgette", cursive, sans-serif;
+}
+
+.font3 {
+  font-family: "Gluten", cursive, sans-serif;
+}
+
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
   .heading {

@@ -7,6 +7,8 @@ const myState = {
   defaultMin: 20,
   defaultSec: 0,
   defaultTotalSec: 1200,
+  defaultColor: "theme1-color",
+  defaultFont: "font1",
 };
 
 const AppProvider = ({ children }) => {
@@ -42,6 +44,12 @@ const AppProvider = ({ children }) => {
   };
 
   const closeSettings = () => {
+    setIsSettingsOpen(false);
+  };
+
+  // reducer
+  const update = (font, color) => {
+    dispatch({ type: "UPDATE", payload: { font, color } });
     setIsSettingsOpen(false);
   };
 
@@ -82,6 +90,7 @@ const AppProvider = ({ children }) => {
         changeTimer,
         openSettings,
         closeSettings,
+        update,
         isActive,
         minutes,
         seconds,

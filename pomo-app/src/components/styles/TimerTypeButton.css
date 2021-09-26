@@ -13,11 +13,6 @@
   cursor: pointer;
 }
 
-.active {
-  background-color: hsl(6, 63%, 50%);
-  color: black;
-}
-
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
   .btn {
