@@ -67,6 +67,15 @@ const PomodoroTimer = ({
     }
   }, [totalSeconds]);
 
+  useEffect(() => {
+    setIsActive(false);
+    setDefaultMin(min);
+    setMinutes(min);
+    setSeconds(0);
+    setDefaultTotalSec(min * 60);
+    setTotalSeconds(min * 60);
+  }, [min]);
+
   return (
     <svg
       viewBox={circleConfig.viewBox}

@@ -35,6 +35,18 @@ const AppProvider = ({ children }) => {
     setIsSettingsOpen(false);
   };
 
+  const updateMainMinutes = (min) => {
+    dispatch({ type: "UPDATE_MAIN_MINUTES", payload: min });
+  };
+
+  const updateShortMinutes = (min) => {
+    dispatch({ type: "UPDATE_SHORT_MINUTES", payload: min });
+  };
+
+  const updateLongMinutes = (min) => {
+    dispatch({ type: "UPDATE_LONG_MINUTES", payload: min });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +55,9 @@ const AppProvider = ({ children }) => {
         openSettings,
         closeSettings,
         update,
+        updateMainMinutes,
+        updateShortMinutes,
+        updateLongMinutes,
         currentTimer,
         isSettingsOpen,
       }}

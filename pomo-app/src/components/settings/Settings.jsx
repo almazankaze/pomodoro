@@ -12,6 +12,9 @@ const Settings = () => {
     isSettingsOpen,
     closeSettings,
     update,
+    updateMainMinutes,
+    updateShortMinutes,
+    updateLongMinutes,
     defaultMin,
     defaultShortBreak,
     defaultLongBreak,
@@ -54,6 +57,22 @@ const Settings = () => {
     closeSettings();
   };
 
+  const updateApp = () => {
+    if (main !== defaultMin) {
+      updateMainMinutes(main);
+    }
+
+    if (shortBreak !== defaultShortBreak) {
+      updateShortMinutes(shortBreak);
+    }
+
+    if (longBreak !== defaultLongBreak) {
+      updateLongMinutes(longBreak);
+    }
+
+    update(fontType, colorTheme);
+  };
+
   return (
     <div
       className={`${
@@ -92,7 +111,7 @@ const Settings = () => {
 
         <button
           className={`confirm-btn ${colorTheme} ${fontType}`}
-          onClick={() => update(fontType, colorTheme)}
+          onClick={() => updateApp()}
         >
           Apply
         </button>
