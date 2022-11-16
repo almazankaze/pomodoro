@@ -1,5 +1,4 @@
 .App {
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,12 +6,11 @@
 }
 
 .heading {
-  font-size: 1.75rem;
   margin: 2rem 0;
 }
 
 .font1 {
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .font2 {
@@ -23,28 +21,23 @@
   font-family: "Gluten", cursive, sans-serif;
 }
 
+.theme1 {
+  background-color: var(--theme1) !important;
+}
+
+.theme2 {
+  background-color: var(--theme2) !important;
+  color: black !important;
+}
+
+.theme3 {
+  background-color: var(--theme3) !important;
+}
+
 .visible {
   display: block;
 }
 
 .non-visible {
   display: none;
-}
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width: 48rem) and (max-device-width: 64rem) and (orientation: portrait) {
-  .heading {
-    font-size: 3rem;
-  }
-}
-
-/* Desktops and laptops ----------- */
-@media only screen and (min-width: 68.75rem) {
-  .App {
-    margin-top: 0;
-  }
-
-  .heading {
-    font-size: 3rem;
-  }
 }

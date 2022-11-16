@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles/TimerTypeButton.css";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
+
+import "../../styles/TimerTypeButton.css";
 
 const TimerTypeButton = ({ id, myText }) => {
   const { currentTimer, changeTimer, defaultColor } = useGlobalContext();

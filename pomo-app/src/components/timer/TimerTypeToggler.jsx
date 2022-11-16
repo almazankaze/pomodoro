@@ -1,6 +1,6 @@
-import React from "react";
 import TimerTypeButton from "./TimerTypeButton";
-import "./styles/TimerTypeToggler.css";
+
+import "../../styles/TimerTypeToggler.css";
 
 const TimerTypeToggler = () => {
   return (

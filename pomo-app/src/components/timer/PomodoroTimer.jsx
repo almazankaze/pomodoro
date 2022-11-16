@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Timer from "./Timer";
 import TimerButton from "./TimerButton";
-import "./styles/PomodoroTimer.css";
+import "../../styles/PomodoroTimer.css";
 
 const PomodoroTimer = ({
   id,
@@ -34,6 +34,16 @@ const PomodoroTimer = ({
       // reset timer
       setMinutes(defaultMin);
       setTotalSeconds(defaultTotalSec);
+    }
+    if (!isActive) {
+      if (seconds === 0) {
+        setSeconds(59);
+        setMinutes((minutes) => minutes - 1);
+      } else {
+        setSeconds((seconds) => seconds - 1);
+      }
+
+      setTotalSeconds((totalSeconds) => totalSeconds - 1);
     }
 
     setIsActive(!isActive);

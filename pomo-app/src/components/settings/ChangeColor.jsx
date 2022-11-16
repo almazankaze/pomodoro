@@ -7,22 +7,22 @@ const ChangeColor = ({ text, defaultColor, changeColor }) => {
       <h3>{text}</h3>
       <div className="button-group">
         <button
-          className="circle-btn theme1-color"
-          onClick={() => changeColor("theme1-color")}
+          className="circle-btn theme1"
+          onClick={() => changeColor("theme1")}
         >
-          {defaultColor === "theme1-color" ? <CheckIcon /> : ""}
+          {defaultColor === "theme1" ? <CheckIcon /> : ""}
         </button>
         <button
-          className="circle-btn theme2-color"
-          onClick={() => changeColor("theme2-color")}
+          className="circle-btn theme2"
+          onClick={() => changeColor("theme2")}
         >
-          {defaultColor === "theme2-color" ? <CheckIcon /> : ""}
+          {defaultColor === "theme2" ? <CheckIcon /> : ""}
         </button>
         <button
-          className="circle-btn theme3-color"
-          onClick={() => changeColor("theme3-color")}
+          className="circle-btn theme3"
+          onClick={() => changeColor("theme3")}
         >
-          {defaultColor === "theme3-color" ? <CheckIcon /> : ""}
+          {defaultColor === "theme3" ? <CheckIcon /> : ""}
         </button>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import React from "react";
 import Timer from "./Timer";
-import "./styles/CircleProgressBar.css";
 import { useGlobalContext } from "../context";
 import TimerButton from "./TimerButton";
+
+import "../../styles/CircleProgressBar.css";
 
 const CircleProgressBar = ({ trailStrokeColor, strokeColor }) => {
   const INITIAL_OFFSET = 25;

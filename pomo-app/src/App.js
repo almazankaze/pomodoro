@@ -1,10 +1,10 @@
 import "./App.css";
 import IconButton from "@mui/material/IconButton";
 import SettingsIcon from "@mui/icons-material/Settings";
-import TimerTypeToggler from "./components/TimerTypeToggler";
+import TimerTypeToggler from "./components/timer/TimerTypeToggler";
 import Settings from "./components/settings/Settings";
 import { useGlobalContext } from "./context";
-import PomodoroTimer from "./components/PomodoroTimer";
+import PomodoroTimer from "./components/timer/PomodoroTimer";
 
 function App() {
   const {
@@ -19,8 +19,8 @@ function App() {
 
   let myColor;
 
-  if (defaultColor === "theme1-color") myColor = "hsl(6, 63%, 50%)";
-  else if (defaultColor === "theme2-color") myColor = "hsl(176, 100%, 44%)";
+  if (defaultColor === "theme1") myColor = "hsl(6, 63%, 50%)";
+  else if (defaultColor === "theme2") myColor = "hsl(176, 100%, 44%)";
   else {
     myColor = "hsl(285, 91%, 52%)";
   }
@@ -28,8 +28,9 @@ function App() {
   return (
     <div className={`App ${defaultFont}`}>
       <Settings />
-      <h1 className="heading">pomodoro</h1>
+      <h1 className="heading">Pomodoro</h1>
       <TimerTypeToggler />
+
       <PomodoroTimer
         id={0}
         currentTimer={currentTimer}

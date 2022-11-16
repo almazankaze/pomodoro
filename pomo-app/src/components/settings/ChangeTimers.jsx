@@ -1,5 +1,4 @@
-import React from "react";
-import "./styles/ChangeTimers.css";
+import "../../styles/ChangeTimers.css";
 
 const ChangeTimers = ({
   text,

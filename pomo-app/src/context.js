@@ -7,7 +7,7 @@ const myState = {
   defaultMin: 20,
   defaultShortBreak: 5,
   defaultLongBreak: 15,
-  defaultColor: "theme1-color",
+  defaultColor: "theme1",
   defaultFont: "font1",
 };
 

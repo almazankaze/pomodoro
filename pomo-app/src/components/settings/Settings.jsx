@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "./styles/Settings.css";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useGlobalContext } from "../../context";
 import ChangeFont from "./ChangeFont";
 import ChangeTimers from "./ChangeTimers";
 import ChangeColor from "./ChangeColor";
+
+import "../../styles/Settings.css";
 
 const Settings = () => {
   const {

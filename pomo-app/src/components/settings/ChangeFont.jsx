@@ -1,5 +1,4 @@
-import React from "react";
-import "./styles/ChangeFont.css";
+import "../../styles/ChangeFont.css";
 
 const ChangeFont = ({ text, defaultFont, changeFont }) => {
   return (
